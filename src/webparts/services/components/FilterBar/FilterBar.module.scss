@@ -1,0 +1,36 @@
+.filterBar {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    .filterSection {
+        flex: 0 0 250px;
+    }
+
+    .searchSection {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .categoryDropdown {
+        width: 100%;
+    }
+
+    .searchBox {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .filterBar {
+        flex-direction: column;
+        
+        .filterSection,
+        .searchSection {
+            flex: 1 1 100%;
+            width: 100%;
+        }
+    }
+}

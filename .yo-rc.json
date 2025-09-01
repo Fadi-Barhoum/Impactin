@@ -1,0 +1,11 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": true,
+    "environment": "onprem",
+    "version": "1.12.1",
+    "libraryName": "impact-in",
+    "libraryId": "3424ed20-75f9-41cf-be45-24e113e3913d",
+    "packageManager": "npm",
+    "componentType": "webpart"
+  }
+}

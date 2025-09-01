@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/services/ServicesWebPart.js",
+      "manifest": "./src/webparts/services/ServicesWebPart.manifest.json",
+      "outputPath": "./dist/services-web-part.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "ServicesWebPartStrings": "webparts/services/loc/{locale}.js"
+  }
+}

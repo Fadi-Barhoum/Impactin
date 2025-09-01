@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "impact-in-client-side-solution",
+    "id": "3424ed20-75f9-41cf-be45-24e113e3913d",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/impact-in.sppkg"
+  }
+}

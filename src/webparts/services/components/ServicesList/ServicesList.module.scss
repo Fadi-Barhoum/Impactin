@@ -1,0 +1,132 @@
+
+.servicesList {
+    .detailsList {
+        background-color: white;
+        border: 1px solid #e1e1e1;
+        border-radius: 4px;
+        
+        :global(.ms-DetailsHeader) {
+            background-color: #f8f9fa;
+        }
+    }
+}
+
+.titleCell {
+    .serviceTitle {
+        font-weight: 600;
+        color: #0078d4;
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    .serviceTags {
+        margin-top: 4px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        
+        .tag {
+            background-color: #e1f5fe;
+            color: #0277bd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+    }
+}
+
+.statusCell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    
+    .statusText {
+        font-size: 12px;
+        text-transform: capitalize;
+    }
+}
+
+.statusActive {
+    color: #107c10;
+}
+
+.statusBeta {
+    color: #ff8c00;
+}
+
+.statusRetired {
+    color: #d13438;
+}
+
+.channelCell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    
+    .channelText {
+        font-size: 12px;
+    }
+}
+
+.slaValue {
+    font-weight: 600;
+    color: #323130;
+}
+
+.feeValue {
+    font-weight: 600;
+    color: #0078d4;
+}
+
+.dateValue {
+    font-size: 12px;
+    color: #605e5c;
+}
+
+.loadingContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 12px;
+    
+    .loadingSpinner {
+        animation: spin 1s linear infinite;
+    }
+}
+
+.emptyState {
+    margin: 20px 0;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .titleCell {
+        .serviceTags {
+            .tag {
+                font-size: 10px;
+                padding: 1px 4px;
+            }
+        }
+    }
+    
+    .channelCell,
+    .statusCell {
+        .channelText,
+        .statusText {
+            display: none;
+        }
+    }
+}
