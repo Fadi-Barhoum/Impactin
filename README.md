@@ -1,73 +1,105 @@
-# impact-in
+# Services Web Part
 
-## Summary
+A SharePoint Framework (SPFx) web part that displays services with filtering, search, and pagination.
 
-Short summary on functionality and used technologies.
+## Objective
 
-[picture of the solution in action, if possible]
+Build a SharePoint Framework (SPFx) Web Part (React + TypeScript) that lists services grouped by categories with:
 
-## Used SharePoint Framework Version
+- Category filter  
+- Search (title/tags)  
+- Client-side pagination  
+- Property Pane controls  
 
-![version](https://img.shields.io/npm/v/@microsoft/sp-component-base/latest?color=green)
+## What to Build
 
-## Applies to
+### 1. Data
+- Load from the provided JSON (contains categories + services).  
+- Each item includes:  
+  - `title`  
+  - `categoryName`  
+  - `ownerDept`  
+  - `slaTargetDays`  
+  - `feeAED`  
+  - `channel`  
+  - `status`  
+  - `tags`  
+  - `links`  
 
-- [SharePoint Framework](https://aka.ms/spfx)
-- [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+### 2. UI
+- Category selector (All + specific category).  
+- List/table with recommended columns:  
+  - Service Title  
+  - Category  
+  - Owner Dept  
+  - SLA (days)  
+  - Fee (AED)  
+  - Channel  
+  - Status  
+  - Updated  
+- Search (by title and tags) with debounce.  
+- Pagination (configurable page size).  
+- Empty states (“No services found”).  
 
-> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
+### 3. Property Pane
+- `pageSize` (5/10/20).  
+- `defaultSearchField` (“title” or “tags”).  
+- `showFeeColumn` (toggle).  
+- `defaultCategoryId`.  
 
-## Prerequisites
-
-> Any special pre-requisites?
-
-## Solution
-
-Solution|Author(s)
---------|---------
-folder name | Author details (name, company, twitter alias with link)
-
-## Version history
-
-Version|Date|Comments
--------|----|--------
-1.1|March 10, 2021|Update comment
-1.0|January 29, 2021|Initial release
-
-## Disclaimer
-
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+### 4. Code Quality
+- TypeScript interfaces for **Category** and **ServiceItem**.  
+- Split components (`FilterBar`, `ServicesList`, `Pager`).  
+- No lint errors.  
 
 ---
 
-## Minimal Path to Awesome
+## Prerequisites
 
-- Clone this repository
-- Ensure that you are at the solution folder
-- in the command-line run:
-  - **npm install**
-  - **gulp serve**
+- **Node.js**: v10.24.1  
+- **Yeoman**: v3.1.1 (`npm install -g yo@3.1.1`)  
+- **SharePoint Generator**: v1.12.1 (`npm install -g @microsoft/generator-sharepoint@1.12.1`)  
+- **React**: 16.8.5 (included in SPFx 1.12.1)  
+- **Gulp CLI**: v2.3.0  
 
-> Include any additional steps as needed.
+## Setup
+
+1. **Clone/Download** the project  
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+3. **Configure serve.json** for HTTP (no HTTPS):
+   ```json
+   {
+     "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/serve.schema.json",
+     "port": 4321,
+     "https": false,
+     "initialPage": "http://localhost:4321/temp/workbench.html"
+   }
+   ```
+
+## Development
+
+```bash
+gulp clean
+gulp build
+gulp bundle
+gulp serve
+```
+
+Open: `http://localhost:4321/temp/workbench.html`
 
 ## Features
 
-Description of the extension that expands upon high-level summary above.
+- Category filtering with dropdown  
+- Search by title/tags with debounce  
+- Client-side pagination (5/10/20 items)  
+- Property pane controls for customization  
+- Responsive design  
 
-This extension illustrates the following concepts:
+## Technology
 
-- topic 1
-- topic 2
-- topic 3
-
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
-
-## References
-
-- [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
-- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+- SPFx 1.12.1  
+- React 16.8.5 (Class Components)  
+- TypeScript (ES5 target)  
