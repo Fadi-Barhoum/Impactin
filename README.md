@@ -89,17 +89,3 @@ gulp serve
 ```
 
 Open: `http://localhost:4321/temp/workbench.html`
-
-## Features
-
-- Category filtering with dropdown  
-- Search by title/tags with debounce  
-- Client-side pagination (5/10/20 items)  
-- Property pane controls for customization  
-- Responsive design  
-
-## Technology
-
-- SPFx 1.12.1  
-- React 16.8.5 (Class Components)  
-- TypeScript (ES5 target)  
